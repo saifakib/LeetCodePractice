@@ -26,3 +26,5 @@
 | 66 | Plus One | Easy | Array Math |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/66.plus-one.js">Solution</a>|
 | 121 | Best Time to Buy and Sell Stock | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/121.best-time-to-buy-and-sell-stock.js">Solution</a>|
 | 217 | Contains Duplicate | Easy | Array Object |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/217.contains-duplicate.js">Solution</a>|
+| 744 | Find Smallest Letter Greater Than Target | Easy | Array Binary Search |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/744.find-smallest-letter-greater-than-target.js">Solution</a>|
+
