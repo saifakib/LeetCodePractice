@@ -27,4 +27,6 @@
 | 121 | Best Time to Buy and Sell Stock | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/121.best-time-to-buy-and-sell-stock.js">Solution</a>|
 | 217 | Contains Duplicate | Easy | Array Object |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/217.contains-duplicate.js">Solution</a>|
 | 744 | Find Smallest Letter Greater Than Target | Easy | Array Binary Search |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/744.find-smallest-letter-greater-than-target.js">Solution</a>|
-
+| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1365.smallerNumbersThanCurrent.py">Solution</a>|
+| 1913 | Maximum Product Difference Between Two Pairs | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1913.maximum-product-difference-between-two-pairs.js">Solution</a>|
+| 1920 | Build Array from Permutation | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1920.build-array-from-permutation.js">Solution</a>|
