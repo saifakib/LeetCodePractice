@@ -30,3 +30,6 @@
 | 1365 | How Many Numbers Are Smaller Than the Current Number | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1365.smallerNumbersThanCurrent.py">Solution</a>|
 | 1913 | Maximum Product Difference Between Two Pairs | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1913.maximum-product-difference-between-two-pairs.js">Solution</a>|
 | 1920 | Build Array from Permutation | Easy | Array |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1920.build-array-from-permutation.js">Solution</a>|
+| 88 | Merge Sorted Array | Easy | Array Sorting |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/88.merge-sorted-array.js">Solution</a>|
+| 1184 |  Distance Between Bus Stops | Easy | Array Math |<a href="https://github.com/saifakib/LeetCodePractice/blob/master/1184.distance-between-bus-stops.js">Solution</a>|
+
