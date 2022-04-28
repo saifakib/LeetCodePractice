@@ -4,6 +4,8 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
+
+    // Big o(n^2)
     let solutoin = []
     for(let index=0; index<nums.length - 1; index++) {
         for(let innerindex=index+1; innerindex<nums.length; innerindex++) {
@@ -12,6 +14,17 @@ var twoSum = function(nums, target) {
                 return solutoin;
             }
         }
+    }
+
+    // Big o(n)
+    let numsWithPosition = {};
+    for(let i=0; i<nums.length; i++) {
+        let adjacent = target - nums[i];
+            
+        if(numsWithPosition[adjacent] !== undefined) {
+            return [i, numsWithPosition[adjacent]]
+        }
+        numsWithPosition[nums[i]] = i;
     }
 };
 
