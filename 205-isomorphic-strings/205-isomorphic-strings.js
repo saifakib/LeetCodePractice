@@ -7,7 +7,7 @@ var isIsomorphic = function(s, t) {
     
     if(s.length != t.length) return false;
     
-    let tset = new Set(t.split(""));
+    let tset = new Set(t.split("")); // { }
     let hash = {};
     
     for(let i=0; i <= s.length-1; i++) {
