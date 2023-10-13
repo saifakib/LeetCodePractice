@@ -1,18 +1,15 @@
+// TC: O(N)
+// SC: O(N)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> result;
-        map<int, int> obj = {};
+        map<int, int> numsIndex;
         for(int i=0; i<nums.size(); i++) {
-            int check_value = target - nums[i];
-            if(obj.find(nums[i]) != obj.end()) {
-                result.push_back(obj[nums[i]]);
-                result.push_back(i);
-                return result;
-            } else {
-                obj[check_value] = i;
+            if(numsIndex.find(nums[i]) != numsIndex.end()) {
+                return {numsIndex[nums[i]], i};
             }
-        };
-        return result;
+            numsIndex[target-nums[i]] = i;
+        }
+        return {};
     }
 };
