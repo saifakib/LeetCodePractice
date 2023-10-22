@@ -29,7 +29,9 @@ public:
             slow = slow -> next;
         }
 
+        auto remove_node = slow -> next;
         slow -> next = slow -> next -> next;
+        delete(remove_node);
 
         // return dummy head next
         return cDhead -> next;;
