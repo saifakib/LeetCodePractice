@@ -1,16 +1,13 @@
-int dx[] = {+0, +0, -1, +1};
-int dy[] = {+1, -1, +0, +0};
+
 class Solution {
-private: 
+private:
+    vector<int> dir = {1, 0, -1, 0, 1};
     void dfs(int ux, int uy, vector<vector<char>>& grid) {
-        // visiting plase replace by water
         grid[ux][uy] = '0';
         for(int i = 0; i < 4; i++) {
-            int vx = ux + dx[i];
-            int vy = uy + dy[i];
-            // isValid?
+            int vx = ux + dir[i];
+            int vy = uy + dir[i + 1];
             if(vx < 0 || vy < 0 || vx >= grid.size() || vy >= grid[0].size() || grid[vx][vy] == '0') continue;
-            // vx and vy valid
             dfs(vx, vy, grid);
         }
     }
