@@ -3,9 +3,8 @@ private:
     bool isPossible(vector<int>& dist, double hour, int currSpreed) {
         double elapsed_time = 0.0;
         for(int i = 0; i < dist.size(); i++){
-            if (elapsed_time > hour) return false;
             if(i != dist.size() - 1) {
-                elapsed_time += (dist[i] / currSpreed) + ((dist[i] % currSpreed) != 0);  // (dist[i] + currSpreed - 1) / currSpreed
+                elapsed_time += (dist[i] + currSpreed - 1) / currSpreed;
             }
             else { 
                 elapsed_time += 1.00 * dist[i] / currSpreed;
