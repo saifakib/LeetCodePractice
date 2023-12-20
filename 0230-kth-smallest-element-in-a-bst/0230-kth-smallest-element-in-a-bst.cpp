@@ -10,17 +10,37 @@
  * };
  */
 class Solution {
+private:
+    class BSTIterator {
+        private:
+            TreeNode* root;
+            stack<TreeNode*> nodeStack;
+        public:
+            BSTIterator(TreeNode* _root) {
+                root = _root;
+                auto curr = root;
+                while(curr) {
+                    nodeStack.push(curr);
+                    curr = curr -> left;
+                }
+            };
+            int genNext() {
+                auto node = nodeStack.top(); nodeStack.pop();
+                auto curr = node -> right;
+                while(curr) {
+                    nodeStack.push(curr);
+                    curr = curr -> left;
+                }
+                return node -> val;
+            }   
+    };
 public:
-    int counter, result;
-    void inOrderDFS(TreeNode* root, int k) {
-        if (root == nullptr) return;
-        inOrderDFS(root -> left, k);
-        counter++;
-        if(counter == k) result = root -> val;
-        inOrderDFS(root -> right, k);
-    }
     int kthSmallest(TreeNode* root, int k) {
-        inOrderDFS(root, k);
+        auto bst = new BSTIterator(root);
+        int result;
+        for(int i = 1; i <= k; i++) {
+            result = bst -> genNext();
+        };
         return result;
     }
 };
