@@ -15,27 +15,25 @@ public:
         : val(_val), left(_left), right(_right), next(_next) {}
 };
 */
-// TC: 0(N)
-// SC: 0(N)
+// TC: O(N)     N is the number of nodes
+// SC: O(N)
 class Solution {
 public:
     Node* connect(Node* root) {
-        queue<Node*> que;
-
-        if(root) que.push(root);
-
-        while(!que.empty()) {
-            int level_size = que.size();
-            for(int i = 0; i < level_size; i++) {
-                Node* node = que.front();
-                que.pop();
-
-                if(i + 1 < level_size) node -> next = que.front();
-                if(node -> left) que.push(node -> left);
-                if(node -> right) que.push(node -> right);
-            }
+        queue<Node*> Q;
+        if(root) Q.push(root);
+        
+        while(!Q.empty()) {
+            int levelSize = Q.size();
+            for(int i = 0; i < levelSize; i++) {
+                auto node = Q.front(); Q.pop();
+                
+                if(node -> left) Q.push(node -> left);
+                if(node -> right) Q.push(node -> right);
+                // check next node in same level exits ?? then point to the node
+                if(i + 1 < levelSize) node -> next = Q.front();
+            } 
         }
-
         return root;
     }
 };
