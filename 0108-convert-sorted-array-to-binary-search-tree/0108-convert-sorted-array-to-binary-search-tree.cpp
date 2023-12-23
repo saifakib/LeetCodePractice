@@ -9,15 +9,13 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// TC: O(N) // size of nums
-// MC: O(logN)
 class Solution {
-private:
+private: 
     TreeNode* BSTBuilder(vector<int>& nums, int L, int R) {
         if(L > R) return nullptr;
         int M = L + (R - L) / 2;
         TreeNode* root = new TreeNode(nums[M]);
-        root -> left  = BSTBuilder(nums, L, M - 1);
+        root -> left = BSTBuilder(nums, L, M - 1);
         root -> right = BSTBuilder(nums, M + 1, R);
         return root;
     }
