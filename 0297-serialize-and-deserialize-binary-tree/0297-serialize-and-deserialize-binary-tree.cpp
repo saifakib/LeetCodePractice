@@ -18,21 +18,27 @@ public:
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
-        vector<string> seVec;
-        stringstream ss(data);
-        string token;
-        while(getline(ss, token, ',')) {
-            seVec.push_back(token);
-        };
         queue<string> Q;
-        for(auto i: seVec) Q.push(i);
+        // stringstream ss(data);
+        // string value;
+        // while(getline(ss, value, ',')) {
+        //     Q.push(value);
+        // };
+        for (int i = 0; i < data.size();) {
+            string value;
+            while (i < data.size() && data[i] != ',') {
+                value += data[i];
+                i++;
+            }
+            if (data[i] == ',') i++;
+            Q.push(value);
+        }
         return BSTBuilder(Q);
     }
 private:
     TreeNode* BSTBuilder(queue<string> &Q) {
         string value = Q.front(); Q.pop();
         if(value == "#") return nullptr;
-        
         TreeNode* node = new TreeNode(stoi(value));
         node -> left = BSTBuilder(Q);
         node -> right = BSTBuilder(Q);
