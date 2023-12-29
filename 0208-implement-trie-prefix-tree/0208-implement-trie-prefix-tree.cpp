@@ -1,39 +1,51 @@
 class Trie {
 public:
     class TrieNode {
-        public:
-            bool isEnd;
-            TrieNode* next[26];
-            TrieNode() {
-                isEnd = false;
-                fill(begin(next), end(next), nullptr);
-            }
+    public:
+        const static int MAX_CHAR = 26;
+        bool isEnd;
+        TrieNode* next[MAX_CHAR];
+        int cnt;
+        TrieNode() {
+            isEnd = false;
+            cnt = 0;
+            fill(begin(next), end(next), nullptr);
+        }
     };
     TrieNode* root;
     Trie() {
-        root = new TrieNode();
+       root = new TrieNode(); 
     }
     
+    // TC: O(M) // M is the size of string
+    // MC: O(M)
     void insert(string word) {
         auto curr = root;
-        for(auto &w: word) {
-            if(curr -> next[w - 'a'] == nullptr) {
-                curr -> next[w - 'a'] = new TrieNode();
+        for(char &w: word) {
+            int rnk = w - 'a';
+            if(curr -> next[rnk] == nullptr) {
+                curr -> next[rnk] = new TrieNode();
             }
-            curr = curr -> next[w - 'a'];
+            curr = curr -> next[rnk];
+            curr -> cnt++;
         }
         curr -> isEnd = true;
     }
     
-    bool search(string word, bool startWith = false) {
+    // TC: O(M) 
+    // MC: O(1)
+    bool search(string word, bool isPrefix = false) {
         auto curr = root;
-        for(auto &w: word) {
-            if(!curr -> next[w - 'a']) return false;
-            curr = curr -> next[w - 'a'];
+        for(char &w: word) {
+            int rnk = w - 'a';
+            if(curr -> next[rnk] == nullptr) return false;
+            curr = curr -> next[rnk];
         }
-        return startWith || curr -> isEnd;
+        return isPrefix || (curr && curr -> isEnd);
     }
     
+    // TC: O(M) 
+    // MC: O(1)
     bool startsWith(string prefix) {
         return search(prefix, true);
     }
