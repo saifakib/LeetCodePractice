@@ -2,14 +2,14 @@ class Trie {
 public:
     class TrieNode {
     public:
-        const static int MAX_CHAR = 26;
         bool isEnd;
-        TrieNode* next[MAX_CHAR];
-        int cnt;
+        unordered_map<int, TrieNode*> next;
+        //TrieNode* next[MAX_CHAR];
+        //int cnt;
         TrieNode() {
             isEnd = false;
-            cnt = 0;
-            fill(begin(next), end(next), nullptr);
+            //cnt = 0;
+            //fill(begin(next), end(next), nullptr);
         }
     };
     TrieNode* root;
@@ -27,7 +27,7 @@ public:
                 curr -> next[rnk] = new TrieNode();
             }
             curr = curr -> next[rnk];
-            curr -> cnt++;
+            //curr -> cnt++;
         }
         curr -> isEnd = true;
     }
