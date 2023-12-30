@@ -10,14 +10,14 @@
  * };
  */
 class Solution {
-private: 
+private:
     TreeNode* BSTBuilder(vector<int>& nums, int L, int R) {
         if(L > R) return nullptr;
         int M = L + (R - L) / 2;
-        TreeNode* root = new TreeNode(nums[M]);
-        root -> left = BSTBuilder(nums, L, M - 1);
-        root -> right = BSTBuilder(nums, M + 1, R);
-        return root;
+        auto node = new TreeNode(nums[M]);
+        node -> left = BSTBuilder(nums, L, M - 1);
+        node -> right = BSTBuilder(nums, M + 1, R);
+        return node;
     }
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
