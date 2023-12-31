@@ -3,15 +3,15 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/28/kthtree1.jpg" style="width: 212px; height: 301px;">
-<pre style="position: relative;"><strong>Input:</strong> root = [3,1,4,null,2], k = 1
+<pre><strong>Input:</strong> root = [3,1,4,null,2], k = 1
 <strong>Output:</strong> 1
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg" style="width: 382px; height: 302px;">
-<pre style="position: relative;"><strong>Input:</strong> root = [5,3,6,2,4,null,null,1], k = 3
+<pre><strong>Input:</strong> root = [5,3,6,2,4,null,null,1], k = 3
 <strong>Output:</strong> 3
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
