@@ -10,20 +10,30 @@
  * };
  */
 class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        int result;
+        auto bst = new BSTBuilder(root);
+        for(int i = 0; i < k; i++) {
+            result = bst -> genNext();
+        }
+        return result;
+        
+    }
 private:
-    class BSTIterator {
+    class BSTBuilder {
         private:
             TreeNode* root;
             stack<TreeNode*> nodeStack;
         public:
-            BSTIterator(TreeNode* _root) {
+            BSTBuilder(TreeNode* _root) {
                 root = _root;
                 auto curr = root;
                 while(curr) {
                     nodeStack.push(curr);
                     curr = curr -> left;
                 }
-            };
+            }
             int genNext() {
                 auto node = nodeStack.top(); nodeStack.pop();
                 auto curr = node -> right;
@@ -31,16 +41,7 @@ private:
                     nodeStack.push(curr);
                     curr = curr -> left;
                 }
-                return node -> val;
-            }   
-    };
-public:
-    int kthSmallest(TreeNode* root, int k) {
-        auto bst = new BSTIterator(root);
-        int result;
-        for(int i = 1; i <= k; i++) {
-            result = bst -> genNext();
-        };
-        return result;
-    }
+                return node -> val; 
+            }
+     };
 };
