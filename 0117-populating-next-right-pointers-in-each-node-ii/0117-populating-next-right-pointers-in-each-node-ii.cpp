@@ -15,24 +15,23 @@ public:
         : val(_val), left(_left), right(_right), next(_next) {}
 };
 */
-// TC: O(N)
-// MC: O(N)
+
 class Solution {
 public:
     Node* connect(Node* root) {
+        if(root == nullptr) return nullptr;
         queue<Node*> Q;
-        if(root) Q.push(root);
+        Q.push(root);
         
         while(!Q.empty()) {
             int levelSize = Q.size();
             for(int i = 0; i < levelSize; i++) {
-                Node* node = Q.front(); Q.pop();
-                
+                auto node = Q.front(); Q.pop();
+                if(i + 1 < levelSize) node -> next = Q.front();
                 if(node -> left) Q.push(node -> left);
                 if(node -> right) Q.push(node -> right);
-                if(i + 1 < levelSize) node -> next = Q.front();
             }
-        }
+        };
         return root;
     }
 };
