@@ -1,36 +1,32 @@
-// TC: O(1)
-// SC: O(N)
+// TC: O(1);
+// MC: O(N);  // N is number of insert value
 class RandomizedSet {
 public:
-    vector<int> randSet;  // randon set
-    unordered_map<int, int> valToIndex;
+    vector<int> ranSet;
+    unordered_map<int, int> valIdx;
     RandomizedSet() {
         
     }
     
     bool insert(int val) {
-        if(valToIndex.count(val)) return false;
-        valToIndex[val] = randSet.size();
-        randSet.push_back(val);
-
+        if(valIdx.count(val)) return false;
+        valIdx[val] = ranSet.size();
+        ranSet.push_back(val);
         return true;
     }
     
     bool remove(int val) {
-        if(valToIndex.count(val) == 0) return false;
-
-        int index = valToIndex[val];
-        swap(randSet[index], randSet[randSet.size() - 1]);
-        randSet.pop_back();
-        valToIndex[randSet[index]] = index;
-        valToIndex.erase(val);
-
+        if(valIdx.count(val) == 0) return false;
+        int index = valIdx[val];
+        swap(ranSet[index], ranSet[ranSet.size() - 1]);
+        ranSet.pop_back();
+        valIdx[ranSet[index]] = valIdx[val];
+        valIdx.erase(val);
         return true;
-        
     }
     
     int getRandom() {
-        return randSet[rand() % randSet.size()];
+        return ranSet[rand() % ranSet.size()];
     }
 };
 
