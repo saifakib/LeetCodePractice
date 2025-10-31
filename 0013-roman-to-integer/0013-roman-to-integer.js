@@ -9,10 +9,11 @@ var romanToInt = function(s) {
     let sum = 0;
     for(let i = 0; i < s.length; i++) {
         if(romanValue[s[i]] < romanValue[s[i+1]]) {
-            sum -= romanValue[s[i]]
-        } else {
-            sum +=romanValue[s[i]]
-        }
+            sum += romanValue[s[i+1]] - romanValue[s[i]]
+            i++;
+            continue;
+        } 
+        sum +=romanValue[s[i]]
     }
     return sum;
 };
